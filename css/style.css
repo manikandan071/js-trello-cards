@@ -1,0 +1,60 @@
+.nav{
+    background-color: rgb(255, 255, 255);
+}
+.sec{
+    display: flex;
+    justify-content: space-between;
+}
+.btn1 button{
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.display{
+    background: #f5f9fc;
+}
+.portfolio-sec{
+    position: relative;
+}
+.addcards{
+    margin-top: 10px;
+}
+.add-list-sec{
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+    background-color: bisque;
+}
+.add-msg-sec{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 300px;
+    z-index: 5;
+    background-color: bisque;
+}
+.btn{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #009bd9;
+    border: none;
+    font-size: 14px;
+}
+.btn2{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #009bd9;
+    border: none;
+    font-size: 14px;
+}
+button{
+    margin-left: 10px;
+}
+input{
+    margin-top: 15px;
+}
