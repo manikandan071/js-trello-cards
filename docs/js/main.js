@@ -31,19 +31,24 @@ function editing(i){
     crdBody.append(addInp);
     let addCencel=document.createElement("button");
     addCencel.innerText="Cencel"
-    addCencel.setAttribute("class","btn btn-primary cencel");
+    addCencel.setAttribute("class","btn mt-3 me-3 btn-primary cencel");
     crdBody.append(addCencel);
 
     let submitBtn=document.createElement("button");
     submitBtn.innerText="Submit";
-    submitBtn.setAttribute("class","btn btn-primary submit");
+    submitBtn.setAttribute("class","btn mt-3 btn-primary submit");
  
     crdBody.append(submitBtn);
     addList.append(addCard);
     incmt++;
     console.log(addInp);
     submitBtn.addEventListener("click",function(){
-        getId.innerText=addInp.value;
+        if(addInp.value != ""){
+            getId.innerText=addInp.value;
+        }
+        else{
+            getId.innerText="Enter Title"
+        }
         addCard.remove();
     })
     addCencel.addEventListener("click",function(){
@@ -84,17 +89,27 @@ function edtingmsg(){
     crdBody.append(msginp);
     let addCencel=document.createElement("button");
     addCencel.innerText="Cencel"
-    addCencel.setAttribute("class","btn btn-primary cencelbtn");
+    addCencel.setAttribute("class","btn mt-3 me-3 btn-primary cencelbtn");
     crdBody.append(addCencel);
     let addDone=document.createElement("button");
     addDone.innerText="Submit";
-    addDone.setAttribute("class","btn btn-primary submitbtn");
+    addDone.setAttribute("class","btn mt-3 btn-primary submitbtn");
     crdBody.append(addDone);
 
     addMsg.append(addCard);
     addDone.addEventListener("click",function(){
-        gettitle.innerText=addInp.value;
-        getpara.innerText=msginp.value;
+        if(addInp.value != ""){
+            gettitle.innerText=addInp.value;
+        }
+        else{
+            gettitle.innerText="Enter Title";
+        }
+        if(msginp.value !=""){
+            getpara.innerText=msginp.value;
+        }
+        else{
+            getpara.innerText="Enter subject";
+        }
         addCard.remove();
     })    
     addCencel.addEventListener("click",function(){
@@ -119,7 +134,7 @@ function addinglist(){
     addMsg.style.display="block";
 
     let addCard=document.createElement("div");
-    addCard.setAttribute("class","card");
+    addCard.setAttribute("class","card text-sm-left text-md-center text-lg-center");
     let crdBody=document.createElement("div");
     crdBody.setAttribute("class","card-body");
     addCard.append(crdBody);
@@ -128,6 +143,7 @@ function addinglist(){
     addTitle.setAttribute("class","card-title")
     crdBody.append(addTitle);
     let addLabel=document.createElement("label");
+    // addLabel.setAttribute("class","text-sm-left")
     addLabel.innerText="TITLE ;";
     crdBody.append(addLabel);
     let addInp=document.createElement("input");
@@ -145,11 +161,11 @@ function addinglist(){
     crdBody.append(br2);
     let addCencel=document.createElement("button");
     addCencel.innerText="Cencel"
-    addCencel.setAttribute("class","btn btn-primary cencelbtn mt-4");
+    addCencel.setAttribute("class","btn mt-3 me-3 btn-primary cencelbtn mt-4");
     crdBody.append(addCencel);
     let addDone=document.createElement("button");
     addDone.innerText="Done";
-    addDone.setAttribute("class","btn btn-primary donebtn mt-4");
+    addDone.setAttribute("class","btn mt-3 btn-primary donebtn mt-4");
     crdBody.append(addDone);
 
     addMsg.append(addCard);
@@ -178,11 +194,22 @@ function addinglist(){
     
     let cardhead=document.createElement("h4");
     cardhead.setAttribute("class","card2title");
-    cardhead.innerText=addInp.value;
+    if(addInp.value != ""){
+        cardhead.innerText=addInp.value;
+    }
+    else{
+        cardhead.innerText="Enter Title";
+    }
+    
     cardtile.append(cardhead);
     let cardpara=document.createElement("p");
     cardpara.setAttribute("class","msgpara");
-    cardpara.innerText=msginp.value;
+    if(msginp.value !=""){
+        cardpara.innerText=msginp.value;
+    }
+    else{
+        cardpara.innerText="Enter subject";
+    }
     cardtile.append(cardpara);
 
     titleDiv.append(cardtile);
@@ -191,14 +218,14 @@ function addinglist(){
     titleBtns.setAttribute("class","d-flex");
     let titleEdit=document.createElement("button");
     // titleEdit.innerText="Edit";
-    titleEdit.setAttribute("class","btn btn-primary edit_msg");
+    titleEdit.setAttribute("class","btn2 edit_msg");
     let icon=document.createElement("i");
     icon.setAttribute("class","icofont-edit-alt");
     titleEdit.append(icon);
     titleBtns.append(titleEdit);
     let titleDel=document.createElement("button");
     // titleDel.innerText="Delete";
-    titleDel.setAttribute("class","btn btn-primary delete_msg");
+    titleDel.setAttribute("class","btn2 delete_msg");
     let icondel=document.createElement("i");
     icondel.setAttribute("class","icofont-ui-delete");
     titleDel.append(icondel);
@@ -248,18 +275,14 @@ addBtn.addEventListener("click",function(){
     crdBody.append(br);
     let addCencel=document.createElement("button");
     addCencel.innerText="Cencel"
-    addCencel.setAttribute("class","btn btn-primary cencel mt-3");
+    addCencel.setAttribute("class","mt-3 btn btn-primary cencel me-3");
     crdBody.append(addCencel);
     let addDone=document.createElement("button");
     addDone.innerText="Done";
-    addDone.setAttribute("class","btn btn-primary done mt-3");
+    addDone.setAttribute("class","mt-3 btn btn-primary done");
    
     crdBody.append(addDone);
-    // let submitBtn=document.createElement("button");
-    // submitBtn.innerText="Submit";
-    // submitBtn.setAttribute("class","btn btn-primary submit");
- 
-    // crdBody.append(submitBtn);
+
     addList.append(addCard);
     incmt++;
     console.log(addInp);
@@ -276,7 +299,7 @@ addBtn.addEventListener("click",function(){
     let secRow=document.getElementById("secrow");
 
     let colm=document.createElement("div");
-    colm.setAttribute("class","col-lg-4 mt-4");
+    colm.setAttribute("class","col-lg-4 mt-4 mb-4");
     let secondCard=document.createElement("div");
     secondCard.setAttribute("class","card");
     colm.append(secondCard);
@@ -288,20 +311,26 @@ addBtn.addEventListener("click",function(){
     crdBody1.append(titleDiv);
     let cardtile=document.createElement("h4");
     cardtile.setAttribute("class","cardtitle");
-    cardtile.innerText=addInp.value;
+    if(addInp.value != ""){
+        cardtile.innerText=addInp.value;
+        console.log("mani")
+    }
+    else{
+        cardtile.innerText="Enter title"
+    }
     titleDiv.append(cardtile);
     let titleBtns=document.createElement("div");
     titleBtns.setAttribute("class","d-flex");
     let titleEdit=document.createElement("button");
     // titleEdit.innerText="Edit";
-    titleEdit.setAttribute("class","btn btn-primary edit");
+    titleEdit.setAttribute("class","btn2 btn-primary edit");
     let editicon=document.createElement("i");
     editicon.setAttribute("class","icofont-edit-alt");
     titleEdit.append(editicon);
     titleBtns.append(titleEdit);
     let titleDel=document.createElement("button");
     // titleDel.innerText="Delete";
-    titleDel.setAttribute("class","btn btn-primary delete");
+    titleDel.setAttribute("class","btn2 btn-primary delete");
     let delicon=document.createElement("i");
     delicon.setAttribute("class","icofont-ui-delete");
     titleDel.append(delicon);
@@ -315,7 +344,7 @@ addBtn.addEventListener("click",function(){
     let addCardList=document.createElement("div");
     let addCardBtn=document.createElement("button");
     addCardBtn.innerText="Add a card"
-    addCardBtn.setAttribute("class","btn btn-primary addcards");
+    addCardBtn.setAttribute("class","btn2 addcards");
     addCardList.append(addCardBtn);
     crdBody1.append(addCardList);
 
